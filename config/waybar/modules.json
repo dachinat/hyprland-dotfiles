@@ -1,0 +1,141 @@
+{
+  "custom/arch": {
+    "format": "󰣇",
+    "tooltip": false,
+    "on-click": "rofi -show drun -theme ~/.config/rofi/config.rasi"
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "on-click": "activate",
+    "all-outputs": true,
+    "active-only": false,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": []
+    },
+    "format": "{icon}",
+    "format-icons": {
+      /*"1": "1",
+		"2": "2",
+		"3": "3",
+		"4": "4",
+		"5": "5",
+		"6": "6",
+		"7": "7",*/
+      "active": "<span font='12'>󰮯</span>",
+      "empty": "<span font='8'></span>",
+      "persistent": "󰊠"
+    }
+  },
+  "pulseaudio": {
+    "tooltip": false,
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{icon} {volume}%  {format_source}",
+    "format-bluetooth-muted": "󰖁 {icon} {format_source}",
+    "format-muted": "󰝟 {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol",
+    "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
+    "on-scroll-down": "~/.config/waybar/scripts/volume --dec"
+  },
+  "network": {
+    "tooltip": false,
+    "format-wifi": "󰖩  {essid} ({signalStrength}%)",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "󰖪  Disconnected ",
+    "format-disabled": "󰖪  Wifi Turned Off ",
+    "on-click": "sh /home/$USER/.scripts/wifi_menu.sh"
+  },
+
+  "hyprland/language": {
+    "format": "  {}",
+    "format-en": "EN",
+    "format-ka": "GE",
+    "on-click": "~/.config/waybar/scripts/language"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞 ", "󰃟 ", "󰃠 "],
+    "on-scroll-up": "~/.config/waybar/scripts/brightness --inc",
+    "on-scroll-down": "~/.config/waybar/scripts/brightness --dec",
+    "min-length": 6
+  },
+
+  "custom/pacman": {
+    "format": "{icon} {0}",
+    "return-type": "json",
+    "format-icons": {
+      "pending-updates": " ",
+      "updated": " "
+    },
+    "exec-if": "which waybar-updates",
+    "exec": "waybar-updates"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 20,
+      "critical": 5
+    },
+    "tooltip": false,
+    "format": "{icon}  {capacity}%",
+    "format-charging": "⚡ {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "interval": 1
+  },
+  "clock": {
+    "format": "{:%H:%M:%S, %e %B}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d, %A}",
+    "interval": 1,
+    "calendar": {
+      "format": {
+        "today": "<span color='#E8C38D'><b>{}</b></span>"
+      }
+    }
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": " off",
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{device_alias}",
+    "tooltip-format-connected": " {device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "~/.config/waybar/scripts/bluetooth"
+  },
+  "custom/power_menu": {
+    "tooltip": false,
+    "format": " ",
+    "on-click": "wlogout"
+  },
+  "custom/randwall": {
+    "tooltip": false,
+    "format": "  ",
+    "on-click": "bash $HOME/.config/hypr/randwall.sh",
+    "on-click-right": "bash $HOME/.config/hypr/randwall.sh"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 5
+  }
+}

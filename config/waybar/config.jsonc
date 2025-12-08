@@ -1,0 +1,30 @@
+{
+    "layer": "top", 
+    "position": "top", 
+    "height": 40, 
+    "spacing": 4,
+    
+    "modules-left": [
+        "custom/arch",
+        "hyprland/workspaces",
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+	"custom/pacman",
+	"tray",
+        "battery",
+	"backlight",
+	"pulseaudio",
+	"bluetooth",
+        "hyprland/language",
+        "network",
+	"custom/randwall",
+	"custom/power_menu"
+    ],
+
+    "include": [
+		"~/.config/waybar/modules.json"
+	]
+}
